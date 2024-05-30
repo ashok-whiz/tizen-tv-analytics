@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tizen tv</title>
+    <style>
+      .button {
+        background-color: yellow;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 45px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
+
+    <style>
+      button {
+        background: #ced345;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 45px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .log {
+        font-size: 45px;
+        color: #ced345;
+      }
+      #log {
+        margin-top: 200px;
+        width: 1000px;
+        height: 800px;
+        overflow: hidden;
+      }
+    </style>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics-compat.js"></script>
+
+    <script>
+      var firebaseApp = firebase.initializeApp({
+        apiKey: "AIzaSyANZyDFDGHEqrls2FH5Dg7YE4Nh8ffIhZ0",
+        authDomain: "bci---wdrb-ott.firebaseapp.com",
+        projectId: "bci---wdrb-ott",
+        storageBucket: "bci---wdrb-ott.appspot.com",
+        messagingSenderId: "703602422130",
+        appId: "1:703602422130:web:979652513c17f7ccde2deb",
+        measurementId: "G-HKR873FHSF",
+      });
+      var analytics = firebaseApp.analytics();
+      console.log(firebaseApp.name);
+      //const auth = firebaseApp.auth();
+    </script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <button id="btn">Press OK button for AppLaunchUser event</button>
+
+    <div id="log" class="log"></div>
+  </body>
+</html>

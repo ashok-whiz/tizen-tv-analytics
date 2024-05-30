@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>debug</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script type="text/javascript" src="$WEBAPIS/webapis/webapis.js"></script>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+      import {
+        getAnalytics,
+        logEvent,
+      } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyANZyDFDGHEqrls2FH5Dg7YE4Nh8ffIhZ0",
+        authDomain: "bci---wdrb-ott.firebaseapp.com",
+        projectId: "bci---wdrb-ott",
+        storageBucket: "bci---wdrb-ott.appspot.com",
+        messagingSenderId: "703602422130",
+        appId: "1:703602422130:web:979652513c17f7ccde2deb",
+        measurementId: "G-HKR873FHSF",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      //   logEvent(analytics, "AppLaunchUser", {
+      //     location: "WDRB+",
+      //     item_brand: "Tizen tv",
+      //   });
+
+      window.logEvent = logEvent;
+      window.analytics = analytics;
+    </script>
+  </head>
+  <body>
+    <div id="log" class="show"></div>
+    <button id="btn">click me</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const video = document.getElementById("btn");
+
+        video.addEventListener("click", () => {
+          logEvent(analytics, "AppLaunchUser", {
+            location: "WDRB+",
+            item_brand: "TizenTV",
+          });
+        });
+      });
+    </script>
+    <!-- <script src="./main.js"></script> -->
+  </body>
+</html>
